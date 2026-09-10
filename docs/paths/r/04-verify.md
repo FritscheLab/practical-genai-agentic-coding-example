@@ -2,41 +2,34 @@ R path · [All steps](index.md) · [Change language](../python/index.md)
 
 Lesson 4 of 6
 
-# Run the tests and read the report
+# Does it work—and can you read it?
 
-Run the existing tests and the same six rows with a fresh run ID:
-
-```bash
-Rscript tests/r/run_tests.R
-Rscript scripts/r/demo.R --ehr data/example/exclusion_report/ehr.tsv --demo data/example/exclusion_report/demographics.tsv --run_id with-report
-```
-
-Open `runs/with-report/summary.md`. Look for **3 of 6 excluded**, **missing height: 2**, and **missing weight: 2**. Does the explanation make it clear why those reason counts add up to four?
-
-Now try the file with all six heights and weights filled in:
+From the example repository root:
 
 ```bash
-Rscript scripts/r/demo.R --ehr data/example/exclusion_report/ehr_complete.tsv --demo data/example/exclusion_report/demographics.tsv --run_id complete-with-report
+Rscript plotting/tests/run_tests.R
+Rscript plotting/check_figure.R --output runs/with-fix/summary.png
 ```
 
-Open `runs/complete-with-report/summary.md`. It should clearly say **0 of 6 excluded**. Use another run ID if either folder already exists.
+The first command checks behavior; the second renders and checks the journal rules. **The starter passes the first and fails the second.** A repair should pass both.
 
-## Look back at the data
+## Look at the result
 
-Open the cleaned and flagged TSVs in `runs/with-report/outputs/` beside the copies in `runs/baseline/outputs/`. You should still see a, b, c cleaned and d, e, f flagged with the same values and reasons. The new information belongs in the summary.
+Open `runs/baseline/summary.png` beside `runs/with-fix/summary.png`, with the [journal rules](../../reference/figure-specifications.md) handy:
 
-Check the actual test result. If a test or report differs from what you expected, show the agent the input and result, then ask it to explain and fix the discrepancy. Continue to [review the change](05-review.md).
+- Two bars per category, Group A above B; all eight values unchanged?
+- Complete labels, correct legend, and no clipping or overlap?
+- Required colors, fonts, dimensions, and axes?
+- Legible text and outlines at 6 × 4 inches? Groups identifiable without color?
 
-## Optional: try more data
+Check a grayscale view too. If your viewer cannot provide one, record that check as unfinished.
 
-Run the original 1,074-row example to see more reasons:
+## Read the description
 
-```bash
-Rscript scripts/r/demo.R --ehr data/example/ehr_bmi_simulated_data.tsv --demo data/example/demographics_simulated_data.tsv --run_id larger-report
-```
+Open `runs/with-fix/summary.alt.txt`. Does it explain the comparison, all values, and the invented nature of the counts in at most 150 words? It must stand on its own without color names.
 
-Compare the report with its flagged rows. An empty input is another optional reporting example.
+**The checker cannot approve accessibility or alt-text accuracy for you.** Fix any problem, rerun both commands, and inspect the new image. If the agent cannot view PNGs, you do that step.
 
 ---
 
-**Previous:** [3. Implement](03-implement.md) · **Next:** [5. Review](05-review.md)
+[← Previous: 3. Implement](03-implement.md) · [Next: 5. Review →](05-review.md)

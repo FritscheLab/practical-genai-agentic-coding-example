@@ -1,45 +1,33 @@
 # AGENTS.md
 
-Help the learner make and verify one reporting change in the synthetic BMI pipeline.
+Help the learner repair a plotting function using code, tests, and a chart made from invented summary counts.
 
-## Start with the learner's path
+## Start with the chosen language
 
-Read `README.md` and `REPO_MAP.md`, then follow `docs/paths/python/` or `docs/paths/r/` for the language the learner selected. Read relevant files before editing and use `rg` to locate code. When asked for an explanation without edits, inspect and explain before proceeding.
+Read `README.md`, `REPO_MAP.md`, and the relevant page in `docs/paths/python/` or `docs/paths/r/`. The plotting contract is `docs/reference/io_contract.md`. Python uses `plotting/plot_summary.py`; R uses `plotting/plot_summary.R`.
 
-## Keep the exercise focused
+The starting chart deliberately overlaps two groups and clips long labels. Preserve that unfinished exercise during maintenance unless the user asks to solve it. For a learner's repair, change the plotting function to make the grouped chart follow `docs/reference/figure-specifications.md` while preserving categories, counts, group assignments, and order.
 
-- Work in the selected language: `src/pgacg/` for Python, or `R/` and `scripts/r/` for R.
-- Use the existing flagged rows to build the exclusion report. Preserve cleaning rules, selected records, data tables, CLI behavior, and dependencies.
-- Treat each input row as one measurement. A flagged measurement can have several reasons; count it once in the excluded total and once under each applicable reason.
-- Keep functions small and testable, with I/O in CLI/reporting layers. Use type hints and `pathlib.Path` in Python; keep R functions sourceable and use `file.path()`.
-- Preserve unrelated work. If another agent is working in parallel, agree on separate file ownership.
-- Ask when the request leaves a scientific method, public schema, CLI behavior, or access decision unresolved. Explain a plan when the approach is unclear or the work is substantial.
+## Explore code and the chart
 
-## Use synthetic data
+Explain source files, function calls, and tests. Do not open individual-level data, inspect participant records, or diagnose why a data point failed. This exercise has no participant records or data-file inputs. Its fixed aggregate counts are invented and embedded in source code.
 
-Use only the included synthetic fixtures or small synthetic cases. Never add real patient or participant records, PHI, PII, or credentials to files or agent context. These simplified pipeline rules are teaching specifications, not clinical recommendations.
+Use the supplied chart to discuss labels, spacing, axes, and readability. Run the synthetic checks when requested and use their pass/fail evidence. Tests do not establish visual quality; inspect the rendered image separately. Do not change expected values to make a test pass.
 
-Outputs, logs, paths, and screenshots can disclose information. This pipeline does not de-identify data or redact saved paths and errors. See `docs/reference/lab-data-policy.md` before adapting the workflow to study data.
+When reusing this workflow, work in a separate workspace with code permitted for the selected service and invented examples. Keep study data, exports, logs, credentials, and sensitive code literals outside the agent's access. A local terminal, read-only mode, or `.gitignore` is not a data-sharing permission. See `docs/reference/lab-data-policy.md`.
 
-`runs/`, `tmp/`, `data/raw/`, `data/derived/`, `.venv/`, and caches are generated. Keep them out of commits. Ignore rules and instruction files do not grant access; follow the client's effective permissions. Keep credentials and personal client settings out of the repository.
+## Verify and hand off
 
-## Verify the change
-
-Run the selected language's checks. Python:
+From the repository root, run the chosen language's checks:
 
 ```bash
-python -m pytest
-python -m ruff check .
+python -m unittest discover -s plotting/tests
 ```
-
-R:
 
 ```bash
-Rscript tests/r/run_tests.R
+Rscript plotting/tests/run_tests.R
 ```
 
-Use Lesson 4's commands for both six-row fixtures. Compare the summaries with `docs/lessons/02-specify.md`: 3 of 6 excluded with missing height on 2 and missing weight on 2, an overlap explanation, and 0 of 6 excluded for complete data. Compare the cleaned and flagged outputs with the saved baseline. The larger demo, extra report tests, and documentation updates are optional follow-ups.
+Render a new image, compare it with the saved baseline, and inspect the code diff. Follow the journal's accessibility requirements: review contrast, legibility, and group identification without color, and write accurate alternative text in `runs/with-fix/summary.alt.txt`. Attach that text when placing the image in a document or slide. Consider accessibility whenever creating an artifact for others to use. Keep `runs/` and `tmp/` ignored. Use `.agents/skills/plot-review/SKILL.md` for a requested independent review. The optional `lab-r-refactor` skill applies the local R template without changing behavior.
 
-Review the actual diff and open new files too. For a requested pipeline review, use `.agents/skills/pipeline-review/SKILL.md`; it is optional for the learner's own review. The data contract is `docs/reference/io_contract.md`.
-
-Finish with a short handoff: what changed, commands actually run and their results, and anything unfinished or untested. Passing tests or agreement between agents does not establish scientific validity. Do not publish, deploy, or modify external services without authorization.
+Preserve unrelated work and agree on file ownership with other agents. Finish with what changed, actual commands and outcomes, visual observations, and anything untested. Do not publish or modify external services without authorization.

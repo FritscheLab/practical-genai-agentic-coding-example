@@ -1,7 +1,0 @@
-person_id	encounter_id	bmi	height_cm	weight_kg	measurement_date
-p1	a	24.2	170	70	2020-01-01
-p2	b	22.9	175	70	2020-01-01
-p3	c	25.0	180	81	2020-01-01
-p4	d	24.2		70	2020-01-01
-p5	e	24.2	170		2020-01-01
-p6	f	24.2			2020-01-01

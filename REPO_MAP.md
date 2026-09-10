@@ -1,58 +1,42 @@
 # Repository map
 
-Start with `README.md`, then stay on your chosen language path. The [online guide](https://fritschelab.org/practical-genai-agentic-coding-guide/) provides the same walkthroughs plus client setup and further explanations.
+Start with `README.md`, then follow your chosen language through `docs/paths/python/` or `docs/paths/r/`.
 
-## Exercise instructions
+## Plotting exercise
 
-| Path | Purpose |
+| File | Purpose |
 | --- | --- |
-| `docs/paths/python/`, `docs/paths/r/` | Setup and six lessons from the starting run through a short handoff. |
-| `docs/lessons/02-specify.md` | Six measurements and the expected reporting change. |
-| `docs/reference/io_contract.md` | Input schemas, existing behavior, and output meanings. |
-| `docs/reference/synthetic-data.md` | Small fixtures and larger simulated example. |
-| `docs/reference/lab-data-policy.md` | Synthetic-data boundaries and study adaptation. |
-| `data/example/exclusion_report/` | Six-row missing-data and complete-data fixtures. |
-| `docs/templates/` | Optional task brief, data contract, and handoff templates. |
+| `plotting/plot_summary.py` | Python's fixed invented counts, plotting function, and output CLI. |
+| `plotting/plot_summary.R` | The equivalent base-R plotting function and CLI. |
+| `plotting/tests/` | Independent behavioral checks for both languages. |
+| `requirements-plotting.txt` | Python plotting dependency. |
+| `docs/lessons/02-specify.md` | Plot repair brief and visual acceptance criteria. |
+| `plotting/check_figure.py`, `plotting/check_figure.R` | Separate journal figure acceptance checks; the starter intentionally fails them. |
+| `docs/reference/figure-specifications.md` | Fictional journal rules for dimensions, fonts, colors, and grouped layout. |
+| `docs/reference/io_contract.md` | Categories, counts, commands, and output expectations. |
+| `docs/reference/synthetic-data.md` | Why the aggregate counts are safe teaching examples. |
+| `docs/reference/lab-data-policy.md` | Boundaries when taking the workflow to study code. |
+| `examples/r_refactor/` | Optional compact R starter, formatted reference, and behavior verifier. |
 
-## Pipeline
+## Reusable instructions
 
-| File | Responsibility |
-| --- | --- |
-| `src/pgacg/__main__.py`, `src/pgacg/cli.py` | `python -m pgacg demo`, argument handling, and run lifecycle. |
-| `src/pgacg/io.py` | TSV reading and schema validation. |
-| `src/pgacg/cleaning.py` | Filtering, representative selection, categories, and metrics. |
-| `src/pgacg/reporting.py`, `src/pgacg/run_utils.py` | Summary, dictionary, logging, and provenance. |
-| `R/io.R`, `R/cleaning.R` | R schema validation, filtering, selection, categories, and metrics. |
-| `R/cli.R`, `R/reporting.R`, `R/run_utils.R` | R CLI, reports, logging, and provenance. |
-| `scripts/r/demo.R` | R command-line entrypoint. |
-| `scripts/r/install_dependencies.R` | Explicit installation of R dependencies (`jsonlite`, `digest`). |
-| `tests/test_*.py`, `tests/r/run_tests.R` | Independent synthetic cases and complete CLI checks. |
-| `scripts/py/check_language_parity.py` | Optional comparison of parsed outputs and counts across both languages. |
-| `scripts/r/simulate_ehr_data.R`, `scripts/py/check_example_data.py` | Optional larger-fixture generation and checksum verification. |
+- `AGENTS.md`: code, chart, test, and data boundaries.
+- `.agents/skills/plot-review/SKILL.md`: review plotting code and test evidence.
+- `.codex/agents/plot-reviewer.toml`: optional named reviewer.
+- `.agents/skills/lab-r-refactor/SKILL.md`: R formatting procedure.
+- `.agents/skills/lab-r-refactor/references/lab-r-template.md`: local R header and section examples.
+- `.codex/agents/r-refactorer.toml`: optional R refactoring role; model and permissions inherit.
+- `.codex/config.toml`: shared Codex defaults; actual access depends on the session.
+- `CLAUDE.md`, `GEMINI.md`, `.github/copilot-instructions.md`: client pointers to the common instructions.
 
-## Agent instructions
-
-- `AGENTS.md`: task scope, synthetic-data rules, verification, and handoff.
-- `.agents/skills/pipeline-review/SKILL.md`: optional review procedure.
-- `.codex/config.toml`: shared Codex settings; effective permissions also depend on your client configuration.
-- `.codex/agents/pipeline-reviewer.toml`: optional reviewer definition.
-- `CLAUDE.md`, `GEMINI.md`, `.github/copilot-instructions.md`: pointers to the shared instructions.
-
-## Checks from the repository root
-
-After completing setup, run the checks for your chosen language. Python:
+## Checks from this repository root
 
 ```bash
-python -m pytest
-python -m ruff check .
+python -m unittest discover -s plotting/tests
 ```
-
-R:
 
 ```bash
-Rscript tests/r/run_tests.R
+Rscript plotting/tests/run_tests.R
 ```
 
-Then follow Lesson 4 in your language path to run both six-row fixtures, read the reports, and compare the data with your saved baseline.
-
-`runs/`, `tmp/`, `.venv/`, `data/raw/`, `data/derived/`, and caches are generated. Keep them out of commits.
+Use your language path to render baseline and repaired images. Passing checks confirms tested behavior; inspect the image separately for readable labels and layout. Keep `runs/`, `tmp/`, environments, and caches out of Git.

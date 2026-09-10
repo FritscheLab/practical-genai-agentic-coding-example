@@ -2,17 +2,21 @@ Python path · [All steps](index.md) · [Change language](../r/index.md)
 
 Lesson 6 of 6
 
-# Leave a three-sentence handoff
+# Leave a useful handoff
 
-Tell a labmate what changed, how you checked it, and what remains. For example:
+Three sentences are enough:
 
-> Added an exclusion section so a labmate can see why measurements are missing. `python -m pytest` passed, the small example reported 3 of 6 excluded with reason counts of 2 and 2, and the complete example reported no exclusions. The cleaned and flagged rows matched the baseline, and I have no remaining issues to report.
+> What changed? Which checks and visual reviews did you actually complete? Where are the PNG and alt text, and what remains unresolved?
 
-Use your actual results and mention anything unfinished. Save the note somewhere you can find it; no template or submission is required. The [handoff template](../../templates/handoff.md) is available when you need more structure.
+Name `runs/with-fix/summary.png` and `runs/with-fix/summary.alt.txt`. Be specific about untested items, including grayscale or accessibility checks. Use the [handoff template](../../templates/handoff.md) only if you need more structure.
 
-## Optional: keep the change in Git
+## Keep or share it
 
-If you want to keep the change in Git, stage the specific source and test files, inspect the staged diff, and commit. Leave generated run folders and credentials out of the commit.
+Commit the source changes if useful; `runs/` stays ignored. Share the reviewed PNG and description together. In a document or slide, attach the description in the image's alternative-text field.
+
+## Optional: try a stacked version
+
+Ask for a **stacked version** in a separate copy. Agree on a new layout brief and preserve the counts. What does it make easier to compare? Keep your completed journal figure too.
 
 ---
 

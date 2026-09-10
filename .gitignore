@@ -6,7 +6,7 @@ tmp/
 # ---- Data (keep small synthetic examples only) ----
 data/raw/
 data/derived/
-# NOTE: data/example/ is tracked
+# The public plotting exercise contains no participant-level data files.
 
 # ---- OS files ----
 .DS_Store
@@ -52,8 +52,19 @@ venv/
 !.codex/agents/
 .codex/agents/*
 !.codex/agents/pipeline-reviewer.toml
+!.codex/agents/r-refactorer.toml
+!.codex/agents/plot-reviewer.toml
 .agents/*
 !.agents/skills/
 .agents/skills/*
 !.agents/skills/pipeline-review/
+!.agents/skills/plot-review/
+.agents/skills/plot-review/*
+!.agents/skills/plot-review/SKILL.md
+!.agents/skills/lab-r-refactor/
+.agents/skills/lab-r-refactor/*
+!.agents/skills/lab-r-refactor/SKILL.md
+!.agents/skills/lab-r-refactor/references/
+.agents/skills/lab-r-refactor/references/*
+!.agents/skills/lab-r-refactor/references/lab-r-template.md
 .claude/settings.local.json

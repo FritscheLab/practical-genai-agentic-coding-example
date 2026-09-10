@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this teaching exercise, please cite this repository."
-title: "Practical GenAI Agentic Coding Example: Synthetic BMI reporting exercise"
-abstract: "Runnable Python and R exercise for Part 2 of the Fritsche Lab Practical GenAI series: make a bounded reporting change, verify it with synthetic data, review the diff, and leave a handoff."
+title: "Practical GenAI Agentic Coding Example: Plotting repair exercise"
+abstract: "Runnable Python and R exercise for Part 2 of the Fritsche Lab Practical GenAI series: repair a plotting function using invented aggregate counts, check code and chart, and leave a handoff."
 authors:
   - family-names: "Fritsche"
     given-names: "Lars G."

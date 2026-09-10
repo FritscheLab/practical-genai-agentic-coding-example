@@ -2,35 +2,22 @@ Python path · [All steps](index.md) · [Change language](../r/index.md)
 
 Lesson 3 of 6
 
-# Ask the agent to add the report
+# Ask for the repair
 
-Copy this prompt into your [coding client](https://fritschelab.org/practical-genai-agentic-coding-guide/docs/platforms/index.html) with the repository open and editing enabled:
+With the repository open in your coding client, paste:
 
 ```text
-Add a readable exclusion section to summary.md in the Python pipeline.
-Read AGENTS.md, REPO_MAP.md, src/pgacg/cli.py, and src/pgacg/reporting.py first.
-
-Use the existing flagged rows to show how many input measurements were excluded
-and how many had each observed reason. Explain that one measurement can have
-several reasons, so the reason counts can exceed the excluded total.
-
-For data/example/exclusion_report/ehr.tsv, show 3 of 6 excluded, with missing
-height on 2 and missing weight on 2. For ehr_complete.tsv in the same folder,
-show 0 of 6 excluded with a clear no-exclusion message. Both use demographics.tsv
-from that folder.
-
-Keep the existing cleaning rules, data outputs, command behavior, and dependencies.
-Work in the Python implementation.
-Run python -m pytest and show me the changed files and results.
+Fix make_summary_figure() in plotting/plot_summary.py to follow
+docs/reference/figure-specifications.md. Preserve counts and command behavior.
+Save the PNG and alt text under runs/with-fix/. Run the checks and summarize
+what changed, including anything you couldn't verify.
 ```
 
-Watch the agent read the code, edit it, and run the tests. If a command fails, read the error and let it investigate. If it starts changing cleaning rules or adding packages, bring it back to the report.
+The local specification carries the detailed layout, color, accessibility, and output rules. `AGENTS.md` carries the repository boundaries. The request adds the file, desired change, and deliverables.
 
-When it finishes, [run the example and read the new summary](04-verify.md).
+Watch for the agent reading that context, editing the plotting code, and running checks. If it heads off course, give a focused correction—for example, “Keep the counts unchanged.”
 
-## Optional: practice testing
-
-Ask the agent to add a small report test for the overlapping reasons or the no-exclusion example. Read its expected answer alongside the six rows; the input should explain the answer.
+Then [check its work](04-verify.md).
 
 ---
 

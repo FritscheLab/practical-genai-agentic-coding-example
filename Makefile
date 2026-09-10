@@ -1,40 +1,40 @@
-.PHONY: help venv install test lint demo install-r test-r demo-r parity
+.PHONY: help venv install test demo test-r demo-r check-figure check-figure-r refactor-r
 
 help:
 	@echo "Targets:"
-	@echo "  venv      - create a Python environment in .venv"
-	@echo "  install   - install Python exercise dependencies"
-	@echo "  test      - run Python tests with pytest"
-	@echo "  lint      - check Python with Ruff"
-	@echo "  demo      - run the Python six-row example"
-	@echo "  install-r - install R exercise dependencies"
-	@echo "  test-r    - run native R tests"
-	@echo "  demo-r    - run the R six-row example"
-	@echo "  parity    - compare Python and R outputs (requires both)"
+	@echo "  venv       - create a Python environment in .venv"
+	@echo "  install    - install Python plotting dependencies"
+	@echo "  test       - run Python plotting behavior checks"
+	@echo "  demo       - render the Python baseline PNG"
+	@echo "  test-r     - run base-R plotting behavior checks"
+	@echo "  demo-r     - render the R baseline PNG"
+	@echo "  check-figure   - check Python journal requirements (starter should fail)"
+	@echo "  check-figure-r - check R journal requirements (starter should fail)"
+	@echo "  refactor-r - verify the optional R refactoring example"
 
 venv:
 	python -m venv .venv
 
 install:
-	python -m pip install -r requirements-dev.txt
+	python -m pip install -r requirements-plotting.txt
 
 test:
-	python -m pytest
-
-lint:
-	python -m ruff check .
+	python -m unittest discover -s plotting/tests
 
 demo:
-	python -m pgacg demo --ehr data/example/exclusion_report/ehr.tsv --demo data/example/exclusion_report/demographics.tsv
-
-install-r:
-	Rscript scripts/r/install_dependencies.R
+	python plotting/plot_summary.py --output runs/baseline/summary.png
 
 test-r:
-	Rscript tests/r/run_tests.R
+	Rscript plotting/tests/run_tests.R
 
 demo-r:
-	Rscript scripts/r/demo.R --ehr data/example/exclusion_report/ehr.tsv --demo data/example/exclusion_report/demographics.tsv
+	Rscript plotting/plot_summary.R --output runs/baseline/summary.png
 
-parity:
-	python scripts/py/check_language_parity.py
+check-figure:
+	python plotting/check_figure.py --output runs/with-fix/summary.png
+
+check-figure-r:
+	Rscript plotting/check_figure.R --output runs/with-fix/summary.png
+
+refactor-r:
+	Rscript examples/r_refactor/verify.R

@@ -1,16 +1,14 @@
 Python path · [Change language](../r/index.md)
 
-# Start the Python demo
+# Fix a plot in Python
 
-A labmate runs the pipeline with six measurements and finds only three in the cleaned output. **Add a short report that explains why.** Follow along during the presentation or work through it at home.
+Overlapping bars. Clipped labels. A very particular fictional journal. **Use an agent to turn this chart into a readable figure.**
 
-The example keeps **a, b, c**. It excludes **d** for missing height, **e** for missing weight, and **f** for both. Your report will show **3 of 6 excluded**, with **2 missing height** and **2 missing weight**. The pipeline already records these reasons.
-
-Use the included synthetic files and an approved coding client. See the [lab data guidance](../../reference/lab-data-policy.md) before adapting this to study data.
+The source contains invented aggregate counts for two groups—no participant records or data-file inputs. Use an approved coding client and keep study data outside this workspace. [Data guidance](../../reference/lab-data-policy.md).
 
 ## Set up
 
-You need Git and a terminal. If you already have the exercise repository, open a terminal in its root. Otherwise, clone it first:
+You need Git and a terminal. If you already have the exercise repository, open a terminal in its root. Otherwise, clone it:
 
 ```bash
 git clone https://github.com/FritscheLab/practical-genai-agentic-coding-example.git
@@ -23,7 +21,7 @@ You need Python 3.10–3.12. Create an environment:
 python -m venv .venv
 ```
 
-If your system uses `python3`, use that for the command above. Activate the environment on macOS/Linux:
+If your system uses `python3`, use it for that command. Activate the environment on macOS/Linux:
 
 ```bash
 source .venv/bin/activate
@@ -35,53 +33,44 @@ Or in Windows PowerShell:
 .venv\Scripts\Activate.ps1
 ```
 
-If PowerShell blocks activation, use `.venv\Scripts\python.exe` in place of `python` below. Install the packages:
+If PowerShell blocks activation, use `.venv\Scripts\python.exe` in place of `python` below. Install the plotting dependency and run the checks:
 
 ```bash
-python -m pip install -r requirements-dev.txt
-python -m pytest
+python -m pip install -r requirements-plotting.txt
+python -m unittest discover -s plotting/tests
 ```
 
-The package installs in editable mode, so code changes take effect without reinstalling.
+## Save the starting chart
 
-## Run the six-row example
+From the example repository root, run:
 
 ```bash
-python -m pgacg demo --ehr data/example/exclusion_report/ehr.tsv --demo data/example/exclusion_report/demographics.tsv --run_id baseline
+python plotting/plot_summary.py --output runs/baseline/summary.png
 ```
 
-Open `runs/baseline/summary.md`, then these files under `runs/baseline/outputs/`:
+Open `runs/baseline/summary.png` in your editor or file browser. Spot the overlapping bars and clipped labels. Keep this image for comparison; choose another output path if you already have a baseline to preserve.
 
-| File | What you will see |
-| --- | --- |
-| `cleaned_bmi_person.tsv` | Measurements a, b, c. |
-| `flagged_rows.tsv` | Measurements d, e, f and their reasons. |
-
-The summary has overall counts but lacks a readable reason breakdown. Keep this run folder so you can look back at it after the change. If `baseline` already exists, choose another `--run_id`.
+**Passing tests ≠ a readable chart.** Behavior checks pass on this starter; the journal checker introduced in Lesson 4 should fail until you repair it.
 
 ## Follow the demo
 
-Follow one change from understanding the repository through implementation, verification, review, and a short handoff.
-
 | Step | What to do |
 | --- | --- |
-| [1. Orient](01-orient.md) | Find the existing reasons and open your agent. |
-| [2. Specify](02-specify.md) | See all six rows and the report you want. |
-| [3. Implement](03-implement.md) | Copy the prompt and ask for the report. |
-| [4. Verify](04-verify.md) | Run the existing tests and read the result. |
-| [5. Review](05-review.md) | Look through the changed code. |
-| [6. Hand off](06-handoff.md) | Leave a three-sentence handoff. |
+| [1. Orient](01-orient.md) | Ask the agent to locate the plotting function and its layout settings. |
+| [2. Specify](02-specify.md) | Read the figure specifications and preserve both groups' values. |
+| [3. Implement](03-implement.md) | Ask the agent to repair the plot. |
+| [4. Verify](04-verify.md) | Check the image, accessibility, and accompanying alt text. |
+| [5. Review](05-review.md) | Inspect the code changes. |
+| [6. Hand off](06-handoff.md) | Record what changed, the checks, and any remaining issues. |
 
-You can make the same edit manually without an assistant. For setup problems, use the [checklist below](#setup-troubleshooting).
 
 ## Setup troubleshooting
 
-- **Python version:** Run `python --version` and check that it reports Python 3.10–3.12, the supported range for this walkthrough's packages.
-- **Active environment:** Run `python -c "import sys; print(sys.executable)"`. The path should point inside this repository's `.venv`. If it does not, activate the environment as shown above, or use its Python executable directly.
-- **Working directory:** Run the setup and demo commands from the repository root, the folder containing `README.md` and `requirements-dev.txt`.
-- **Package installation:** Read the first pip error. Connection, DNS, timeout, or package-index access errors mean pip could not fetch packages; check your environment's approved network and package-index access. If pip reaches the index but reports incompatible Python or package versions, check the interpreter above and save the full error for troubleshooting. Do not change dependency versions to work around a network failure.
-
-See [pipeline troubleshooting](https://fritschelab.org/practical-genai-agentic-coding-guide/docs/runbooks/demo_pipeline.html#troubleshooting) for help with input or run errors.
+- **Python version:** `python --version` should report Python 3.10–3.12.
+- **Environment:** `python -c "import sys; print(sys.executable)"` should point inside this repository's `.venv`. Activate it or use its executable directly.
+- **Package installation:** Read the first installation error. A connection or package-index error is an environment problem; check approved network access before changing dependencies.
+- **Working directory:** Run commands from the example repository root, the folder containing `README.md` and `plotting/`.
+- **Opening the chart:** The output is a PNG image. Open it from your file browser or editor; no browser server is needed.
 
 ---
 

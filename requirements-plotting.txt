@@ -1,0 +1,2 @@
+# The plotting exercise needs only Matplotlib; R uses base graphics.
+matplotlib>=3.7,<4

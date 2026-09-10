@@ -2,31 +2,27 @@ R path · [All steps](index.md) · [Change language](../python/index.md)
 
 Lesson 5 of 6
 
-# Look through the change
+# Check the diff
 
-Use your editor's changed-file view, or run:
+From the repository root:
 
 ```bash
-git diff
+git diff -- plotting/plot_summary.R
+git status --short
 ```
 
-Find where the existing reasons reach the summary. Can you connect that code to the report you just read? Look for one excluded total and separate reason counts. Open any new files in your editor too.
+Connect the changed settings to the improved chart. Did the counts, group assignments, CLI, and dependencies stay intact? Inspect any other changed or new source files too. The plotting command should still write only the PNG; the agent authors the alt text separately.
 
-Make sure the change explains exclusions without changing which rows are kept. If you spot a mistake, have it fixed and rerun the tests. Then [leave a short handoff](06-handoff.md).
-
-## Optional: get a second reading
-
-Ask a labmate or a fresh agent session:
+Want a second opinion? Ask a labmate or another agent:
 
 ```text
-Review the R exclusion-report change. Check it against the six rows in
-data/example/exclusion_report/ehr.tsv and the no-exclusion example in
-ehr_complete.tsv. Look for counting mistakes or changes to the original data
-outputs. Explain any problem with a concrete example. Do not edit files.
+Review the R plotting diff against docs/reference/figure-specifications.md,
+the checks, and the PNG and alt text in runs/with-fix/. Report concrete issues
+and unperformed checks. Don't edit files.
 ```
 
-The included [review skill](https://fritschelab.org/practical-genai-agentic-coding-guide/docs/platforms/portable-context.html) is another option for a larger review. You do not need a reviewer agent to finish this demo.
+The optional [plot-review skill](https://fritschelab.org/practical-genai-agentic-coding-guide/docs/platforms/portable-context.html) packages that review. Check any findings before acting on them.
 
 ---
 
-**Previous:** [4. Verify](04-verify.md) · **Next:** [6. Hand off](06-handoff.md)
+[← Previous: 4. Verify](04-verify.md) · [Next: 6. Hand off →](06-handoff.md)

@@ -1,8 +1,8 @@
 # Describe the data the code should expect
 
-A *data contract* is an agreement about the data: what each column means, which values are allowed, and what the program should do when something is missing or invalid. Writing this down helps prevent two people—or a person and an agent—from making different assumptions about the same file. See the [pipeline contract](../reference/io_contract.md) for a worked example.
+A *data contract* is an agreement about the data: what each column means, which values are allowed, and what the program should do when something is missing or invalid. Writing this down helps prevent two people—or a person and an agent—from making different assumptions about the same file. See the [plotting contract](../reference/io_contract.md) for a worked example.
 
-Use synthetic fixtures in this repository. When adapting the template for a study elsewhere, record the data classification, permitted services and storage, and relevant study agreements in that project's approved documentation. The [lab data guidance](../reference/lab-data-policy.md) explains what to check.
+Use the invented aggregate counts in this repository. When adapting the template for a study elsewhere, record the data classification, permitted services and storage, and relevant study agreements in that project's approved documentation. The [lab data guidance](../reference/lab-data-policy.md) explains what to check.
 
 ```markdown
 ## Where the data comes from
