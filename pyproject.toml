@@ -16,8 +16,8 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://ilarsf.github.io/practical-genai-agentic-coding-guide/"
-Repository = "https://github.com/ilarsf/practical-genai-agentic-coding-example"
+Homepage = "https://fritschelab.org/practical-genai-agentic-coding-guide/"
+Repository = "https://github.com/FritscheLab/practical-genai-agentic-coding-example"
 
 [tool.setuptools]
 package-dir = {"" = "src"}

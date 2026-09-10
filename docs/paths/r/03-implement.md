@@ -4,7 +4,7 @@ Lesson 3 of 6
 
 # Ask the agent to add the report
 
-Copy this prompt into your [coding client](https://ilarsf.github.io/practical-genai-agentic-coding-guide/docs/platforms/index.html) with the repository open and editing enabled:
+Copy this prompt into your [coding client](https://fritschelab.org/practical-genai-agentic-coding-guide/docs/platforms/index.html) with the repository open and editing enabled:
 
 ```text
 Add a readable exclusion section to summary.md in the R pipeline.

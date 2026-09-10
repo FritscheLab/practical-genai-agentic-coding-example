@@ -102,7 +102,7 @@ The command's exit code tells a calling script whether it completed:
 
 If a run has started, an error summary, log, and manifest are saved as long as the output directory remains writable. Read those files to diagnose the problem; any partial outputs belong to a failed run. Errors before a run starts, such as an existing run ID, cannot produce a new summary.
 
-The reporting exercise keeps these exit codes unchanged. See [Logging and runs](https://ilarsf.github.io/practical-genai-agentic-coding-guide/docs/practices/logging_and_runs.html) for details of the manifest.
+The reporting exercise keeps these exit codes unchanged. See [Logging and runs](https://fritschelab.org/practical-genai-agentic-coding-guide/docs/practices/logging_and_runs.html) for details of the manifest.
 
 ## Comparing languages
 

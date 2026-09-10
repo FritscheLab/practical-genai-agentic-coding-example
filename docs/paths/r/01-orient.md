@@ -10,7 +10,7 @@ A **measurement** is one input row. A **person** may have several measurements, 
 
 Find `R/cli.R` and `R/reporting.R`. The first runs the pipeline; the second writes the summary. Your change will bring the existing flags into that report.
 
-Open the repository in your coding client. Follow the [client setup page](https://ilarsf.github.io/practical-genai-agentic-coding-guide/docs/platforms/index.html) if needed, and check that it can read `AGENTS.md`, edit this workspace, and run commands.
+Open the repository in your coding client. Follow the [client setup page](https://fritschelab.org/practical-genai-agentic-coding-guide/docs/platforms/index.html) if needed, and check that it can read `AGENTS.md`, edit this workspace, and run commands.
 
 ## Ask the agent to explain the starting code
 
@@ -21,7 +21,7 @@ Use row f in data/example/exclusion_report/ehr.tsv to explain why one
 measurement can have two reasons. Point to the files you read; do not edit yet.
 ```
 
-Compare its explanation with the flagged file, then continue to [the six-row example](02-specify.md). The [folder map](https://ilarsf.github.io/practical-genai-agentic-coding-guide/docs/platforms/portable-context.html) explains client instructions, settings, and skills if you want to explore those next.
+Compare its explanation with the flagged file, then continue to [the six-row example](02-specify.md). The [folder map](https://fritschelab.org/practical-genai-agentic-coding-guide/docs/platforms/portable-context.html) explains client instructions, settings, and skills if you want to explore those next.
 
 ---
 

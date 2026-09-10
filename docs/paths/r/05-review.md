@@ -25,7 +25,7 @@ ehr_complete.tsv. Look for counting mistakes or changes to the original data
 outputs. Explain any problem with a concrete example. Do not edit files.
 ```
 
-The included [review skill](https://ilarsf.github.io/practical-genai-agentic-coding-guide/docs/platforms/portable-context.html) is another option for a larger review. You do not need a reviewer agent to finish this demo.
+The included [review skill](https://fritschelab.org/practical-genai-agentic-coding-guide/docs/platforms/portable-context.html) is another option for a larger review. You do not need a reviewer agent to finish this demo.
 
 ---
 

@@ -1,6 +1,6 @@
 # Repository map
 
-Start with `README.md`, then stay on your chosen language path. The [online guide](https://ilarsf.github.io/practical-genai-agentic-coding-guide/) provides the same walkthroughs plus client setup and further explanations.
+Start with `README.md`, then stay on your chosen language path. The [online guide](https://fritschelab.org/practical-genai-agentic-coding-guide/) provides the same walkthroughs plus client setup and further explanations.
 
 ## Exercise instructions
 

@@ -13,7 +13,7 @@ Use the included synthetic files and an approved coding client. See the [lab dat
 You need Git and a terminal. If you already have the exercise repository, open a terminal in its root. Otherwise, clone it first:
 
 ```bash
-git clone https://github.com/ilarsf/practical-genai-agentic-coding-example.git
+git clone https://github.com/FritscheLab/practical-genai-agentic-coding-example.git
 cd practical-genai-agentic-coding-example
 ```
 
@@ -81,7 +81,7 @@ You can make the same edit manually without an assistant. For setup problems, us
 - **Working directory:** Run the setup and demo commands from the repository root, the folder containing `README.md` and `requirements-dev.txt`.
 - **Package installation:** Read the first pip error. Connection, DNS, timeout, or package-index access errors mean pip could not fetch packages; check your environment's approved network and package-index access. If pip reaches the index but reports incompatible Python or package versions, check the interpreter above and save the full error for troubleshooting. Do not change dependency versions to work around a network failure.
 
-See [pipeline troubleshooting](https://ilarsf.github.io/practical-genai-agentic-coding-guide/docs/runbooks/demo_pipeline.html#troubleshooting) for help with input or run errors.
+See [pipeline troubleshooting](https://fritschelab.org/practical-genai-agentic-coding-guide/docs/runbooks/demo_pipeline.html#troubleshooting) for help with input or run errors.
 
 ---
 

@@ -13,7 +13,7 @@ Use the included synthetic files and an approved coding client. See the [lab dat
 You need Git and a terminal. If you already have the exercise repository, open a terminal in its root. Otherwise, clone it first:
 
 ```bash
-git clone https://github.com/ilarsf/practical-genai-agentic-coding-example.git
+git clone https://github.com/FritscheLab/practical-genai-agentic-coding-example.git
 cd practical-genai-agentic-coding-example
 ```
 
@@ -56,7 +56,7 @@ Follow one change from understanding the repository through implementation, veri
 | [5. Review](05-review.md) | Look through the changed code. |
 | [6. Hand off](06-handoff.md) | Leave a three-sentence handoff. |
 
-You can make the same edit manually without an assistant. For setup problems, check your working directory and language environment, then see [pipeline troubleshooting](https://ilarsf.github.io/practical-genai-agentic-coding-guide/docs/runbooks/demo_pipeline.html#troubleshooting).
+You can make the same edit manually without an assistant. For setup problems, check your working directory and language environment, then see [pipeline troubleshooting](https://fritschelab.org/practical-genai-agentic-coding-guide/docs/runbooks/demo_pipeline.html#troubleshooting).
 
 ---
 

@@ -7,8 +7,8 @@ authors:
     given-names: "Lars G."
     affiliation: "University of Michigan"
     website: "https://fritschelab.org/"
-repository-code: "https://github.com/ilarsf/practical-genai-agentic-coding-example"
-url: "https://ilarsf.github.io/practical-genai-agentic-coding-guide/"
+repository-code: "https://github.com/FritscheLab/practical-genai-agentic-coding-example"
+url: "https://fritschelab.org/practical-genai-agentic-coding-guide/"
 license: "GPL-3.0-only"
 keywords:
   - "agentic coding"

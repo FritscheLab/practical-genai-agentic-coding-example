@@ -63,4 +63,4 @@ Run either pipeline on `ehr_bmi_simulated_data.tsv` and `demographics_simulated_
 
 A row can have both a height or weight issue and a BMI mismatch, so reason counts can overlap. These totals provide a quick check that the full pipeline still behaves as expected. Smaller test datasets with answers worked out independently check individual calculations and selection rules.
 
-For a larger practice dataset, use the same command with output paths under `data/raw/` and a larger `--n_individuals`. Its counts will differ from this baseline. You can inspect the included files, dictionaries, and provenance in the [repository](https://github.com/ilarsf/practical-genai-agentic-coding-example/tree/main/data/example).
+For a larger practice dataset, use the same command with output paths under `data/raw/` and a larger `--n_individuals`. Its counts will differ from this baseline. You can inspect the included files, dictionaries, and provenance in the [repository](https://github.com/FritscheLab/practical-genai-agentic-coding-example/tree/main/data/example).
