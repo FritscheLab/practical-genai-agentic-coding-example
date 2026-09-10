@@ -1,0 +1,13 @@
+person_id	date_of_birth	age	age_bin	deceased	race_clean	ethnicity_clean	race_ethnicity	race_ethnicity_harmonized	sex_gender	marital_status_name	zip3
+UEoD2fnrgapD	1992-06-25	27	18-34	No	White	Non-Hispanic	White Non-Hispanic	Non-Hispanic White	Female	Single	464
+rOPQ4oQuRu8S	1996-06-01	23	18-34	Yes	White	Hispanic	White Hispanic	Hispanic	Female	Single	264
+Y7P6f8zIZDGg	1974-12-07	45	35-54	No	White	Hispanic	White Hispanic	Hispanic	Male	Married	802
+cqBEVfi68e9M	1971-07-08	48	35-54	No	Pacific Islander	Non-Hispanic	Pacific Islander Non-Hispanic	Non-Hispanic Asian/Pacific Islander/Native American	Male	Single	833
+Qxq6qQVbOXS4	1992-05-30	27	18-34	No	Asian	Non-Hispanic	Asian Non-Hispanic	Non-Hispanic Asian/Pacific Islander/Native American	Male	Divorced	494
+7BCHWuQObKEe	1993-07-21	26	18-34	No	White	Non-Hispanic	White Non-Hispanic	Non-Hispanic White	Male	Single	050
+kPxUFpT5g7LL	1937-12-02	82	75+	Yes	White	Non-Hispanic	White Non-Hispanic	Non-Hispanic White	Female	Single	248
+cUlGrnmX3C4r	1966-12-10	53	35-54	No	Pacific Islander	Non-Hispanic	Pacific Islander Non-Hispanic	Non-Hispanic Asian/Pacific Islander/Native American	Male	Married	477
+oOpLOVjOMYdl	1974-12-01	45	35-54	No	Asian	Non-Hispanic	Asian Non-Hispanic	Non-Hispanic Asian/Pacific Islander/Native American	Female	Married	510
+TBUujTYDSV62	1956-07-22	63	55-74	No	Black	Non-Hispanic	Black Non-Hispanic	Non-Hispanic Black	Female	Divorced	770
+MrvEKa7o9nfh	1976-09-27	43	35-54	No	Pacific Islander	Non-Hispanic	Pacific Islander Non-Hispanic	Non-Hispanic Asian/Pacific Islander/Native American	Male	Single	001
+X9LBJjGzjrYd	1995-07-17	24	18-34	Yes	Black	Non-Hispanic	Black Non-Hispanic	Non-Hispanic Black	Female	Married	036

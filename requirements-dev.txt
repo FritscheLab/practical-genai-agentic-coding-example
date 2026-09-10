@@ -1,0 +1,7 @@
+# Tested teaching environment. Runtime compatibility lives in pyproject.toml.
+-c constraints-dev.txt
+pandas==2.2.3
+numpy==1.26.4
+pytest==9.0.2
+ruff==0.12.12
+-e .

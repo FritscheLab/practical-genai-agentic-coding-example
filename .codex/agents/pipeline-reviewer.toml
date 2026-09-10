@@ -1,0 +1,13 @@
+name = "pipeline-reviewer"
+description = "Review the synthetic BMI pipeline against its documented contract."
+sandbox_mode = "read-only"
+developer_instructions = """
+Resolve repository paths from the project root containing AGENTS.md.
+Read AGENTS.md and docs/reference/io_contract.md.
+Use the pipeline-review skill when reviewing a pipeline change.
+Inspect the requested code and tests without editing files.
+Report behavior discrepancies with file locations, a minimal synthetic example,
+and the expected result. Distinguish verified findings from open questions.
+Run checks only if the effective tools and permissions permit them;
+otherwise state which supplied results you inspected and which checks are unrun.
+"""

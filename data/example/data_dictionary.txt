@@ -1,0 +1,6 @@
+person_id: Randomly generated synthetic person identifier (consistent across records).
+encounter_id: Randomly generated synthetic encounter identifier (unique per record).
+bmi: Body Mass Index (kg/m^2); may be missing, implausible, inconsistent, or nonsensical.
+height_cm: Height in centimeters; may be missing, implausible (<100 or >250), or nonsensical.
+weight_kg: Weight in kilograms; may be missing, implausible (<25 or >300), or nonsensical.
+measurement_date: Date and time of measurement (YYYY-MM-DD HH:MM:SS).

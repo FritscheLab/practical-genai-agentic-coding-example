@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this teaching exercise, please cite this repository."
+title: "Practical GenAI Agentic Coding Example: Synthetic BMI reporting exercise"
+abstract: "Runnable Python and R exercise for Part 2 of the Fritsche Lab Practical GenAI series: make a bounded reporting change, verify it with synthetic data, review the diff, and leave a handoff."
+authors:
+  - family-names: "Fritsche"
+    given-names: "Lars G."
+    affiliation: "University of Michigan"
+    website: "https://fritschelab.org/"
+repository-code: "https://github.com/ilarsf/practical-genai-agentic-coding-example"
+url: "https://ilarsf.github.io/practical-genai-agentic-coding-guide/"
+license: "GPL-3.0-only"
+keywords:
+  - "agentic coding"
+  - "generative AI"
+  - "reproducible research"
+  - "research software"
+  - "teaching"

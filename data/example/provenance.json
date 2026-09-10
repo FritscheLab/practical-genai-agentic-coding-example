@@ -1,0 +1,41 @@
+{
+  "description": "Synthetic teaching fixtures; no real patient records",
+  "generator": "scripts/r/simulate_ehr_data.R",
+  "generator_sha256": "176b0be396467a6b82fce7e4b76fe8811f2e001f221aa6f29263f5ab9a0f1f5b",
+  "upstream": {
+    "repository": "https://github.com/FritscheLab/practical-genai-coding-guide",
+    "revision": "34830a3d1323d9f81a395f5d4fda48b5ee80566b",
+    "path": "scripts/simulate_ehr_data.R",
+    "sha256": "0dc49cc025e077f46f3e22effa80fdb8e8314ee7a2f45fa30522bef1aca56da0"
+  },
+  "parameters": {
+    "seed": 123,
+    "n_individuals": 12
+  },
+  "environment": {
+    "R": "4.6.1",
+    "optparse": "1.8.2"
+  },
+  "files": {
+    "ehr_bmi_simulated_data.tsv": {
+      "sha256": "322a4c4ac4f047b9ebad4e1fe58f2c18468d69d0b9fb5c770436f3afd976a877",
+      "size_bytes": 62961
+    },
+    "data_dictionary.txt": {
+      "sha256": "2de16282fdfa4ab3c30a5824022d78e2b5995cf3ba2c2a9ab3073cc734936c1c",
+      "size_bytes": 517
+    },
+    "demographics_simulated_data.tsv": {
+      "sha256": "a8275fcbb3a5ef5ab52ce11876f5648d432d04be882b2278775ec475918894d1",
+      "size_bytes": 1673
+    },
+    "demographics_data_dictionary.txt": {
+      "sha256": "5b9c3a68a16b83c0443a57fe08c8f1c63727385fa9b0b07d442ccc62b3c217f4",
+      "size_bytes": 855
+    }
+  },
+  "adaptations": [
+    "Part 2 script and setup-documentation paths",
+    "Dictionary wording identifies randomly generated synthetic labels; no simulated values or generation rules changed."
+  ]
+}

@@ -1,0 +1,12 @@
+person_id: Unique identifier for the individual (matches EHR data).
+date_of_birth: Date of birth in YYYY-MM-DD format.
+age: Age in years as of 2019-12-31 . May contain NA.
+age_bin: Age category based on calculated age (<18, 18-34, 35-54, 55-74, 75+).
+deceased: Synthetic deceased indicator (Yes/No).
+race_clean: Synthetic race label (NA for: Patient Refused, Unknown,  ).
+ethnicity_clean: Synthetic ethnicity label (NA for: Patient Refused, Unknown,  ).
+race_ethnicity: Combined race and ethnicity string (NA if either component is NA).
+race_ethnicity_harmonized: Harmonized race/ethnicity classification (e.g., Hispanic, Non-Hispanic White, Non-Hispanic Black, Non-Hispanic Asian/Pacific Islander/Native American, Other).
+sex_gender: Synthetic sex/gender label.
+marital_status_name: Synthetic marital status.
+zip3: Simulated three-digit ZIP code prefix.

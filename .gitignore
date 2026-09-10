@@ -1,0 +1,59 @@
+# ---- Generated outputs / artifacts ----
+runs/
+tmp/
+*.log
+
+# ---- Data (keep small synthetic examples only) ----
+data/raw/
+data/derived/
+# NOTE: data/example/ is tracked
+
+# ---- OS files ----
+.DS_Store
+Thumbs.db
+
+# ---- Editor / IDE ----
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ---- Python caches / tooling ----
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+dist/
+build/
+*.egg-info/
+
+# ---- Virtual environments ----
+.venv/
+venv/
+
+# ---- R session and local library state ----
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+.Rlib/
+
+# ---- Local secrets / env overrides ----
+.env
+.env.*
+
+# ---- Shared agent setup; keep runtime state and personal additions local ----
+.codex/*
+!.codex/config.toml
+!.codex/agents/
+.codex/agents/*
+!.codex/agents/pipeline-reviewer.toml
+.agents/*
+!.agents/skills/
+.agents/skills/*
+!.agents/skills/pipeline-review/
+.claude/settings.local.json

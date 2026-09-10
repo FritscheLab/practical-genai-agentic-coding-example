@@ -1,0 +1,66 @@
+name: Exercise checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install -r requirements-dev.txt
+      - name: Check baseline and style
+        run: |
+          python -m pytest
+          python -m ruff check .
+          python scripts/py/check_example_data.py
+      - name: Run documented baseline
+        run: python -m pgacg demo --ehr data/example/ehr_bmi_simulated_data.tsv --demo data/example/demographics_simulated_data.tsv --run_id ci-baseline
+
+  r-and-parity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: "4.6.1"
+      - name: Install both demo environments
+        run: |
+          python -m pip install -r requirements-dev.txt
+          Rscript scripts/r/install_dependencies.R
+      - name: Check the R baseline
+        run: Rscript tests/r/run_tests.R
+      - name: Run the documented R demo
+        run: Rscript scripts/r/demo.R --ehr data/example/ehr_bmi_simulated_data.tsv --demo data/example/demographics_simulated_data.tsv --run_id ci-r-baseline
+      - name: Compare Python and R outputs
+        run: python scripts/py/check_language_parity.py
+
+  synthetic-fixtures:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: "4.6.1"
+      - name: Install the simulator dependency
+        run: Rscript -e 'install.packages("optparse", repos = "https://cloud.r-project.org")'
+      - name: Regenerate synthetic teaching inputs
+        run: |
+          Rscript scripts/r/simulate_ehr_data.R --output_ehr tmp/regenerated/ehr_bmi_simulated_data.tsv --output_ehr_dict tmp/regenerated/data_dictionary.txt --output_demo tmp/regenerated/demographics_simulated_data.tsv --output_demo_dict tmp/regenerated/demographics_data_dictionary.txt --seed 123 --n_individuals 12
+          python scripts/py/check_example_data.py --directory tmp/regenerated

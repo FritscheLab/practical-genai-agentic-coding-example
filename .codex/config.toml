@@ -1,0 +1,7 @@
+# Shared settings for the local teaching exercise.
+# See https://ilarsf.github.io/practical-genai-agentic-coding-guide/docs/platforms/codex.html for trust, overrides, and permission profiles.
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+
+[sandbox_workspace_write]
+network_access = false
