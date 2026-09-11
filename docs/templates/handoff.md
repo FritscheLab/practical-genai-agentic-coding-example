@@ -24,7 +24,7 @@ Results: [what happened, run IDs, and useful logs or output files]
 Not checked: [limitation and reason]
 
 ## Pick up here
-Inspect AGENTS.md, git status, the diff, and the files above.
+Inspect AGENTS.md, the changed-file list and diffs, and the files above.
 Confirm this note against the current checkout.
 Continue with: [next task and how to check it]
 ```

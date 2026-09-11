@@ -4,19 +4,20 @@ Lesson 1 of 6
 
 # Find the plotting function
 
-Open the repository in your [coding client](https://fritschelab.org/practical-genai-agentic-coding-guide/docs/platforms/index.html). Keep the baseline PNG open; attach it if your client accepts images.
+Keep the example workspace open in VS Code. In Explorer, double-click `runs/baseline/summary.png` to keep its tab open; right-click the tab and choose **Split Right**. Click the left editor group when opening code so the image stays visible on the right.
 
-Paste this:
+In Copilot Chat, keep the **Local** session target and select **Ask** from the agent-role selector. These controls are separate from the model selector; the [setup page](../../setup/vscode-copilot.md) shows their roles. Paste:
 
 ```text
 In plotting/plot_summary.py, what controls the overlapping bars and clipped
-labels? Give me a short code map with file/function references. Don't edit
-or run anything yet.
+labels? Read the source and give me a short code map with file/function
+references. Explain how the plotting function reaches the saved PNG.
+Do not edit files or run commands.
 ```
 
-Open the cited source. Can you find `make_summary_figure()`, the bar positions, and the margins? Trace `plot_summary()` to the saved PNG. Check the explanation against the code and chart.
+Open the cited source in the other editor group. Find `make_summary_figure()`, the bar positions, and the margins. Compare the explanation with the code and the baseline image. If a reference is missing, open `plotting/plot_summary.py` from Explorer yourself and ask about that section.
 
-**You are exploring plotting code, not individual records.** This repository uses invented aggregate constants.
+**Ready for the next step:** you can point to the layout settings that cause the visible problem. The constants describe invented aggregate counts; there are no individual records to investigate.
 
 ---
 

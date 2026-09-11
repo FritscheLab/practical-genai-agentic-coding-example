@@ -2,54 +2,44 @@ R path · [Change language](../python/index.md)
 
 # Fix a plot in R
 
-Overlapping bars. Clipped labels. A very particular fictional journal. **Use an agent to turn this chart into a readable figure.**
+Overlapping bars. Clipped labels. A very particular fictional journal. **Use VS Code and GitHub Copilot to turn this chart into a readable figure.** You will ask questions in Chat, inspect images in Explorer, and review code changes in Source Control.
 
-The source contains invented aggregate counts for two groups—no participant records or data-file inputs. Use an approved coding client and keep study data outside this workspace. [Data guidance](../../reference/lab-data-policy.md).
+The source contains invented aggregate counts for two groups, with no participant records or data-file inputs. Keep study data outside this workspace. [Data guidance](../../reference/lab-data-policy.md).
 
-## Set up
+## Set up in VS Code
 
-You need Git and a terminal. If you already have the exercise repository, open a terminal in its root. Otherwise, clone it:
+1. Follow the [VS Code + GitHub Copilot setup](../../setup/vscode-copilot.md), including cloning the example through Source Control. You need VS Code, Git, Copilot access, and R 4.1 or later; the exercise uses base R with no extra packages.
+2. Complete the [R environment and baseline steps](../../setup/vscode-copilot.md#r). In Chat, use the **Local** session target and **Agent** role to prepare the environment, run the existing behavior tests, and save the starting chart. Read the expanded command output before continuing.
+3. In **Explorer**, expand `runs`, then `baseline`, and open `summary.png`. Find the overlapping bars and clipped category labels. Keep this image for comparison.
+4. Open **Source Control**. Setup should leave **Changes** and **Staged Changes** empty: the generated chart and local environment are ignored by Git. If tracked files changed, review them and ask Copilot to explain before beginning the repair.
 
-```bash
-git clone https://github.com/FritscheLab/practical-genai-agentic-coding-example.git
-cd practical-genai-agentic-coding-example
+**Passing tests does not guarantee a readable chart.** The starter passes behavior checks and fails the separate journal figure checker. The repair should eventually pass both.
+
+Already prepared the environment but missing the chart? Select **Agent** and paste:
+
+```text
+Use the existing R environment for this repository. Run the existing
+R plotting behavior tests and render plotting/plot_summary.R to
+runs/baseline/summary.png. Preserve any baseline already there; if it exists,
+report its path instead of overwriting it. Do not edit tracked source files,
+tests, specifications, or dependencies. Report the actual commands, results,
+and output path. Keep the deliberately overlapping and clipped chart.
 ```
 
-You need R 4.1 or later. The example uses base R; no package installation is needed. Run the checks from your terminal, including RStudio's Terminal tab if you use it:
+Prefer the Claude Code extension in VS Code? Use the [Claude setup and mode translation](../../setup/vscode-copilot.md#prefer-claude-code), then follow these same lessons and Source Control steps.
 
-```bash
-Rscript plotting/tests/run_tests.R
-```
+For environment or Chat-control problems, use [setup troubleshooting](../../setup/vscode-copilot.md#troubleshooting). If you prefer typing commands, follow the [complete R CLI appendix](../../appendix/command-line.md#r).
 
-## Save the starting chart
+## Follow the six lessons
 
-From the example repository root, run:
-
-```bash
-Rscript plotting/plot_summary.R --output runs/baseline/summary.png
-```
-
-Open `runs/baseline/summary.png` in your editor or file browser. Spot the overlapping bars and clipped labels. Keep this image for comparison; choose another output path if you already have a baseline to preserve.
-
-**Passing tests ≠ a readable chart.** Behavior checks pass on this starter; the journal checker introduced in Lesson 4 should fail until you repair it.
-
-## Follow the demo
-
-| Step | What to do |
+| Step | Surface and action |
 | --- | --- |
-| [1. Orient](01-orient.md) | Ask the agent to locate the plotting function and its layout settings. |
-| [2. Specify](02-specify.md) | Read the figure specifications and preserve both groups' values. |
-| [3. Implement](03-implement.md) | Ask the agent to repair the plot. |
-| [4. Verify](04-verify.md) | Check the image, accessibility, and accompanying alt text. |
-| [5. Review](05-review.md) | Inspect the code changes. |
-| [6. Hand off](06-handoff.md) | Record what changed, the checks, and any remaining issues. |
-
-
-## Setup troubleshooting
-
-- **R command:** If the terminal cannot find `Rscript`, check your R installation and terminal environment.
-- **Working directory:** Run commands from the example repository root, the folder containing `README.md` and `plotting/`.
-- **Opening the chart:** The output is a PNG image. Open it from your file browser or editor; no browser server is needed.
+| [1. Orient](01-orient.md) | **Ask**: locate the plotting function and compare code with the baseline. |
+| [2. Specify](02-specify.md) | **Plan**: propose a repair against the journal specification. |
+| [3. Implement](03-implement.md) | **Agent**: carry out the reviewed plan. |
+| [4. Verify](04-verify.md) | **Agent**: rerun checks; you inspect the chart and alternative text. |
+| [5. Review](05-review.md) | **Source Control**: inspect changed files and color-coded diffs. |
+| [6. Hand off](06-handoff.md) | **Source Control**: stage reviewed source, commit locally, and record results. |
 
 ---
 
